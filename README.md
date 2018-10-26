@@ -23,7 +23,7 @@ All previous solutions that have been proposed to deal with this issue work on t
 
 Therefore, we propose to design an effective system that avoids transmission of the heavy video stream and analyses the video from a local hardware itself, incorporating edge computing, to issue an alert to the vehicle behind in case the overtaking maneuver might result in an accident. The alert is issued using C2V (cloud-to-vehicle) communication. This is achieved through a Green-Red Light mechanism for giving the indication of passing through freely for overtaking or not.
 
-Technical Description of the solution 
+### Technical Description of the solution 
 
 The proposed architecture of our solution requires vehicles to have a camera mounted on the dashboard which is interfaced with an on-board processor. We intend to use a Raspberry Pi Model 3B along with a Pi-cam for this purpose in the prototype. This is used so as to provide good networking capabilities, efficient computing at the edge and fast connectivity with the camera module.
 
@@ -32,7 +32,8 @@ All vehicles, at each time, will use the camera to perform two tasks locally - (
 Each vehicle is also connected to a real-time database (Firebase) and identified by its car number. All information collected by the vehicles locally is updated on this real-time database. The visual representation of the structure of our database is shown in the figure below :
 
 
-We take into consideration the scenario where Car 1 wants to overtake Car 2. Now Car1 first detects the number plate of Car 2 and establishes communication with it on the firebase database and forms a grouping. Car 2 then checks the presence of vehicles approaching it from the opposite lane. This is checked in a given Region of Interest. When a car of size more than a given threshold approaches the Car 2 (which represents the degree of closeness), it sets the value of the variable on the firebase to 0, representing that Car 1 cannot overtake. This is set as an event listener on Car 1 which lights Red light on it. If there is no obstruction in the given ROI, the variable is set to 1, lighting green light in Car 1, indicating it to overtake freely. 
+
+Take into consideration the scenario where Car 1 wants to overtake Car 2. In this case,  Car1 first detects the number plate of Car 2 and establishes communication with it on the firebase database by pairing with it on cloud. Pairing allows Car 1 to know if Car 2 has detected vehicles approaching it from the opposite lane. If Car 2 has detected such a vehicle then it sets the value of the associated variable on the firebase to 0, representing that Car 1 cannot overtake. As Car 1 listens to the value of this variable via an event listener, it sets the Red LED on the Raspberry Pi. If there is no obstruction in the given ROI, the variable is set to 1 and the green LED on the hardware is turned on and RED is turned off thereby indicating it to overtake freely.
 
 ![alt text](https://github.com/ishanijanveja/HashHacks3_FutureGadgetsLab/blob/master/ex.png)
 
@@ -49,3 +50,4 @@ We take into consideration the scenario where Car 1 wants to overtake Car 2. Now
 1. OpenCv
 2. Tensorflow
 3. Keras
+4. Firebase
