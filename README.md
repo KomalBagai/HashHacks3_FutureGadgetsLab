@@ -43,11 +43,11 @@ Take into consideration the scenario where Car 1 wants to overtake Car 2. In thi
 
 ### Technology Stack 
 #### Hardware :
-1. Camera Module 
+1. Camera Module (Pi Cam)
 2. Raspberry Pi for local processing 
 
 #### Software :
 1. OpenCv
-2. Tensorflow
-3. Keras
-4. Firebase
+2. Tensorflow (optional)
+3. Keras (optional)
+4. Firebase Realtime database
