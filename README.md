@@ -23,6 +23,23 @@ All previous solutions that have been proposed to deal with this issue work on t
 
 Therefore, we propose to design an effective system that avoids transmission of the heavy video stream and analyses the video from a local hardware itself, incorporating edge computing, to issue an alert to the vehicle behind in case the overtaking maneuver might result in an accident. The alert is issued using C2V (cloud-to-vehicle) communication. This is achieved through a Green-Red Light mechanism for giving the indication of passing through freely for overtaking or not.
 
+Technical Description of the solution 
+
+The proposed architecture of our solution requires vehicles to have a camera mounted on the dashboard which is interfaced with an on-board processor. We intend to use a Raspberry Pi Model 3B along with a Pi-cam for this purpose in the prototype. This is used so as to provide good networking capabilities, efficient computing at the edge and fast connectivity with the camera module.
+
+All vehicles, at each time, will use the camera to perform two tasks locally - (i) detect number plate of the vehicle in front and (ii) detect the vehicles approaching from the opposite side of the lane within a given Region of Interest (ROI) and having a size more than a given threshold indicating the degree of its closeness. These two tasks are performed in alternate frames to prevent excessive delays due to compute intensive detection algorithms. This works in part to make a computing pipeline that we aim to have near real-time results.
+
+Each vehicle is also connected to a real-time database (Firebase) and identified by its car number. All information collected by the vehicles locally is updated on this real-time database. The visual representation of the structure of our database is shown in the figure below :
+
+
+We take into consideration the scenario where Car 1 wants to overtake Car 2. Now Car1 first detects the number plate of Car 2 and establishes communication with it on the firebase database and forms a grouping. Car 2 then checks the presence of vehicles approaching it from the opposite lane. This is checked in a given Region of Interest. When a car of size more than a given threshold approaches the Car 2 (which represents the degree of closeness), it sets the value of the variable on the firebase to 0, representing that Car 1 cannot overtake. This is set as an event listener on Car 1 which lights Red light on it. If there is no obstruction in the given ROI, the variable is set to 1, lighting green light in Car 1, indicating it to overtake freely. 
+
+![alt text](https://github.com/ishanijanveja/HashHacks3_FutureGadgetsLab/blob/master/flow.png)
+
+### Flowchart
+
+![alt text](https://raw.githubusercontent.com/ishanijanveja/hashHacks3_FutureGadgetsLab/master/flow.png)
+
 ### Technology Stack 
 #### Hardware :
 1. Camera Module 
@@ -32,7 +49,3 @@ Therefore, we propose to design an effective system that avoids transmission of 
 1. OpenCv
 2. Tensorflow
 3. Keras
-
-## Flowchart
-
-![alt text](https://raw.githubusercontent.com/ishanijanveja/hashHacks3_FutureGadgetsLab/master/flow.png)
