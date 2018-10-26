@@ -8,7 +8,7 @@ An Overtaking Assistance System developed as a part of the HashHacks3.0 hackatho
 
 ![alt text](https://raw.githubusercontent.com/ishanijanveja/hashHacks3_FutureGadgetsLab/master/abstract/flow.png)
 
-###What is the problem that we aim to solve?
+### What is the problem that we aim to solve?
 
 India, being an overpopulated country, suffers from highly busy roads and a huge amount of traffic. This leads to various road accidents occurring very frequently. According to Annual Report of Transport Research Wing on Road accidents in India, around 5,01,423 accidents are claimed in 2015 in India resulting in around 1,46,133 deaths. 
 
@@ -16,7 +16,7 @@ One of the major causes of these accidents is the risky overtaking on the roads.
 
 We aim to develop a solution that can address this issue completely and can make the driver aware of what he can come across if he overtakes a vehicle at any point. This will definitely make the roads safer for driving.
 
-###How do we propose to address it? 
+### How do we propose to address it? 
 
 We propose to design an overtaking assistance system to assist drivers as they plan on overtaking the vehicles in front of them. 
 
