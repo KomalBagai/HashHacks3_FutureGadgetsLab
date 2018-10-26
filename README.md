@@ -34,7 +34,7 @@ Each vehicle is also connected to a real-time database (Firebase) and identified
 
 We take into consideration the scenario where Car 1 wants to overtake Car 2. Now Car1 first detects the number plate of Car 2 and establishes communication with it on the firebase database and forms a grouping. Car 2 then checks the presence of vehicles approaching it from the opposite lane. This is checked in a given Region of Interest. When a car of size more than a given threshold approaches the Car 2 (which represents the degree of closeness), it sets the value of the variable on the firebase to 0, representing that Car 1 cannot overtake. This is set as an event listener on Car 1 which lights Red light on it. If there is no obstruction in the given ROI, the variable is set to 1, lighting green light in Car 1, indicating it to overtake freely. 
 
-![alt text](https://github.com/ishanijanveja/HashHacks3_FutureGadgetsLab/blob/master/flow.png)
+![alt text](https://github.com/ishanijanveja/HashHacks3_FutureGadgetsLab/blob/master/ex.png)
 
 ### Flowchart
 
