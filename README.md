@@ -24,6 +24,6 @@ All previous solutions that have been proposed to deal with this issue work on t
 Therefore, we propose to design an effective system that avoids transmission of the heavy video stream and analyses the video from a local hardware itself to issue an alert to the vehicle behind in case the overtaking maneuver might result in an accident. The alert is issued using C2V (cloud-to-vehicle) communication.
 
 
-##Flowchart
+## Flowchart
 
 ![alt text](https://raw.githubusercontent.com/ishanijanveja/hashHacks3_FutureGadgetsLab/master/flow.png)
