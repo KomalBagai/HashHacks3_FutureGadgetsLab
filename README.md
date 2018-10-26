@@ -6,7 +6,7 @@ An Overtaking Assistance System developed as a part of the HashHacks3.0 hackatho
 [![Watch the video](https://raw.github.com/ishanijanveja/HashHacks3_FutureGadgetsLab/master/ressources/WebMole_Youtube_Video.png)](https://www.youtube.com/watch?v=pbTPrBaxpX0&feature=youtu.be)
 
 
-![alt text](https://raw.githubusercontent.com/ishanijanveja/hashHacks3_FutureGadgetsLab/master/abstract/flow.png)
+![alt text](https://raw.githubusercontent.com/ishanijanveja/hashHacks3_FutureGadgetsLab/master/flow.png)
 
 ### What is the problem that we aim to solve?
 
