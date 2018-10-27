@@ -2,8 +2,8 @@
 
 import cv2
 
-car_cascade = cv2.CascadeClassifier('trial2.xml')
-vc = cv2.VideoCapture('/Users/ishani/AnacondaProjects/HashHacks3_FutureGadgetsLab/Data/video-4.mp4')
+car_cascade = cv2.CascadeClassifier('trainedmodel-car.xml')
+vc = cv2.VideoCapture('video-4.mp4')
 
 if vc.isOpened():
     rval , frame = vc.read()
